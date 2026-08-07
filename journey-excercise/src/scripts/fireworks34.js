@@ -87,7 +87,7 @@ const createFirework = (count, position, size, texture, radius, color) => {
     vertexShader,
     fragmentShader,
     uniforms: {
-      uSize: new THREE.Uniform(10),
+      uSize: new THREE.Uniform(1),
       uResolution: new THREE.Uniform(sizes.resolution),
       uTexture: new THREE.Uniform(texture),
       uColor: new THREE.Uniform(color),
@@ -97,7 +97,7 @@ const createFirework = (count, position, size, texture, radius, color) => {
     depthWrite: false,
     blending: THREE.AdditiveBlending,
   });
-  material.uniforms.uSize.value = size;
+  material.uniforms.uSize.value = size * 0.15;
 
   firwork = new THREE.Points(geometry, material);
   firwork.position.copy(position);
@@ -124,7 +124,7 @@ const createRenderFirework = (e) => {
   const position = new THREE.Vector3(Math.random() - 0.5, Math.random(), Math.random() - 0.5);
   const size = 0.1 + Math.random();
   const texture = textures[Math.floor(Math.random() * textures.length)];
-  const radius = 0.5 + Math.random();
+  const radius = 0.8 + Math.random();
   const color = new THREE.Color();
   color.setHSL(Math.random(), 1, 0.7);
 
