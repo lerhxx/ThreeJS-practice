@@ -1,6 +1,6 @@
 import * as THREE from 'three';
-import vertexShader from '../vertexShaders/33.glsl';
-import fragmentShader from '../fragmentShaders/33.glsl';
+import vertexShader from '../vertexShaders/34.glsl';
+import fragmentShader from '../fragmentShaders/34.glsl';
 import smokeUrl from '../../static/smoke.png'
 import GUI from 'lil-gui';
 
@@ -24,13 +24,13 @@ gui
 const material = new THREE.ShaderMaterial({
   vertexShader,
   fragmentShader,
-  transparent: true,
-  side: THREE.DoubleSide,
-  depthWrite: false,
-  blending: THREE.AdditiveBlending,
+  // transparent: true,
+  // side: THREE.DoubleSide,
+  // depthWrite: false,
+  // blending: THREE.AdditiveBlending,
   uniforms: {
-    uTime: new THREE.Uniform(0),
-    uColor: new THREE.Uniform(new THREE.Color(materialParameters.color)),
+    uSize: new THREE.Uniform(10),
+    // uResolution: new THREE.Uniform(new THREE.Vector2(sizes.width, sizes.height))
   }
 });
 

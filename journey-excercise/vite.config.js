@@ -5,6 +5,7 @@ import glsl from 'vite-plugin-glsl';
 export default defineConfig({
   // root: path.resolve(__dirname, 'src'), // 关键配置
   root: './src/',
+  publicDir: '../static',
   server: {
     port: 5173,
     open: true
